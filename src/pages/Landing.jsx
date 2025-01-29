@@ -1,21 +1,27 @@
 import { Link } from "react-router-dom";
+import { Container, LeftSection, RightSection } from "../components/Layout";
+import { Card } from "../components/Card";
+import { Button } from "../components/Button";
 
 function Landing() {
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 text-gray-900 px-6">
-            <h1 className="text-4xl font-bold mb-4">Welcome to Fifty Poems</h1>
-            <p className="text-lg text-gray-600 text-center max-w-2xl">
-                Every week, a new one-word prompt is released. Submit your poem and be part of a collaborative poetic experience.
-            </p>
-            <div className="mt-6 flex space-x-4">
-                <Link to="/sign-up" className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">
-                    Get Started
-                </Link>
-                <Link to="/sign-in" className="bg-gray-300 text-gray-900 px-6 py-3 rounded-lg shadow hover:bg-gray-400">
-                    Sign In
-                </Link>
-            </div>
-        </div>
+        <Container>
+            <LeftSection>
+                <h1 className="text-5xl font-bold mb-4 text-blue-600">Welcome to Fifty Poems</h1>
+                <p className="text-lg text-gray-600">
+                    A unique poetry experience where every week, a new one-word prompt inspires
+                    a collection of creative voices. Submit your poem and contribute to a
+                    collaborative poetic masterpiece.
+                </p>
+            </LeftSection>
+            <RightSection>
+                <Card>
+                    <h2 className="text-xl font-semibold mb-4">Join the Community</h2>
+                    <Button to="/sign-up" variant="signup">Get Started</Button>
+                    <Button to="/sign-in" variant="signin">Sign In</Button>
+                </Card>
+            </RightSection>
+        </Container>
     );
 }
 
