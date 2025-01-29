@@ -7,7 +7,7 @@ import SubmitPoem from "../pages/SubmitPoem";
 function AppRoutes() {
     return (
         <Routes>
-            <Route path="/" element={<Landing />} />
+            <Route path="/" element={<SubmitPoem />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/submit-poem" element={<SubmitPoem />} />
