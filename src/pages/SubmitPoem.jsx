@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Container } from "../components/Layout";
 import { Button } from "../components/Button";
 import Textarea from "../components/Textarea";
+import Navbar from "../components/Navbar";
 
 function SubmitPoem() {
     const [poem, setPoem] = useState("");
@@ -22,26 +22,22 @@ function SubmitPoem() {
 
     return (
         <div className="flex h-screen">
-            {/* Placeholder for Navbar */}
-            <aside className="w-64 bg-gray-100 p-6 hidden md:block">
-                <h2 className="text-xl font-bold">Navbar</h2>
-                {/* Future navbar items */}
-            </aside>
+            <Navbar />
 
-            {/* Main Content */}
-            <div className="flex-1 flex flex-col items-center justify-center px-6 text-center">
+            {/* Main Content: Positioned to the right of Navbar */}
+            <div className="flex-1 flex flex-col justify-start px-12 py-8" style={{ marginLeft: "250px" }}>
                 <h1 className="text-4xl font-bold mb-6 text-blue-600">{weeklyPrompt}</h1>
-                <form onSubmit={handleSubmit} className="w-full max-w-3xl space-y-4 flex flex-col items-center">
+                <form onSubmit={handleSubmit} className="w-full max-w-3xl space-y-4">
                     <Textarea
                         name="poem"
                         placeholder="Write your poem here..."
                         value={poem}
                         onChange={(e) => setPoem(e.target.value)}
                         required
-                        className="w-full text-center"
+                        className="w-full"
                     />
                     {error && <p className="text-red-500 text-sm">{error}</p>}
-                    <div className="flex justify-center w-full">
+                    <div className="flex justify-end">
                         <Button type="submit" variant="signup">Submit</Button>
                     </div>
                 </form>
