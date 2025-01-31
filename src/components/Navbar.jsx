@@ -51,7 +51,6 @@ function Navbar({ isOpen, toggleNavbar }) {
             </MenuButton>
             {isOpen && (
                 <>
-                    <NavItem to="/">Home</NavItem>
                     <NavItem to="/submit-poem">Submit Poem</NavItem>
                     <NavItem to="/profile">Profile</NavItem>
                     <NavItem to="/compiled-poems">Compiled Poems</NavItem>
